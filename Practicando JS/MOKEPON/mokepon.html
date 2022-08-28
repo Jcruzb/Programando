@@ -24,13 +24,18 @@
     <section id="seleccionar-mascota">
       <h2>Elije a tu Mascota</h2>
 
+
       <input type="radio" name="petPicked" id="bullbasaur" />
       <label for="bullbasaur">Bullbasaur</label><br>
+
+
       <input type="radio" name="petPicked" id="charmander" />
       <label for="charmander">Charmander</label> <br>
+
+
       <input type="radio" name="petPicked" id="squirtle" />
       <label for="squirtle">Squirtle</label> <br>
-      <button id="button-petSelect">Seleccionar</button>
+      <button id="button-petSelect"class="btn btn-secondary">Seleccionar</button>
 
     </section>
     <section id="seleccionar-ataque">
@@ -40,17 +45,18 @@
       <p>La mascota enemiga <span id="pcPet"></span> tiene <span>3</span> vidas</p>
    
       <p>
-        <button>FUEGO🔥</button>
-        <button>AGUA💧</button>
-        <button>PLANTA🌾</button>
+        <button id="button-fire"class="btn btn-warning">FUEGO🔥</button>
+        <button id="button-water"class="btn btn-primary">AGUA💧</button>
+        <button id="button-plant"class="btn btn-success">PLANTA🌾</button>
       </p>
+      <section id="mensajes">
+        <p>
+          <p id="gamerAttack"></p>
+          <p id="pcAttack"></p>
+        </p>
+      </section>
     </section>
-    <section id="mensajes">
-      <p>
-        Tu mascota atacó con FUEGO, la mascota del enemigo atacó con PLANTA -
-        GANASTE🎉
-      </p>
-    </section>
+   
   </body>
 
 
