@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piedra Papel o Tijera</title>
+    <script>
+      //Variables
+      let jugador = 0;
+      let ganadas = 0;
+      let perdidas = 0;
+      let empatadas = 0;
+      
+      //Funciones
+
+      function aleatorio(max, min) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      function ganar(){
+        ganadas ++
+      }
+      function perder(){
+        perdidas ++
+      }
+      function empatar (){
+        empatadas ++
+      }
+      while (ganadas < 3 && perdidas < 3) {
+        //elección del jugador
+        jugador = prompt("escribe 1 para piedra, 2 para papel y 3 para tijera");
+
+        if (jugador == 1) {
+          alert("Elegiste Piedra 🥌");
+        } else if (jugador == 2) {
+          alert("Elegiste Papel 🧻");
+        } else if (jugador == 3) {
+          alert("Elegiste Tijera ✂");
+        } else {
+          alert("TE RENDISTE 😢");
+        }
+        //elección de la computadora
+        let PC = aleatorio(3, 1);
+        if (PC == 1) {
+          alert("La computadora eligió Piedra 🥌");
+        } else if (PC == 2) {
+          alert("La computadora eligió Papel 🧻");
+        } else {
+          alert("La computadora eligió Tijera ✂");
+        }
+
+        //Batalla
+        if (jugador == PC) {
+          alert("Empataron 🤷‍♂️");
+          empatar()
+        } else if (jugador == 1 && PC == 3) {
+          alert("Ganaste 🏌️‍♂️");
+          ganar()
+        } else if (jugador == 2 && PC == 1) {
+          alert("Ganaste 🏌️‍♂️");
+          ganar()
+        } else if (jugador == 3 && PC == 2) {
+          alert("Ganaste 🏌️‍♂️");
+          ganar()
+        } else {
+          alert("Perdiste 😖");
+          perder()
+        }
+     }
+      alert("Ganaste " +ganadas+ " partidas, perdiste "+ perdidas+" partidas y empataron "+empatadas+" partidas")
+    </script>
+  </head>
+  <body>
+    <h1>Piedra Papel o tijera</h1>
+  </body>
+</html>
