@@ -15,34 +15,44 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./js/mokepon.js"></script>
+    <link rel="stylesheet" href="./css/mokepon.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+      </style>
     <title>Mokepon</title>
   </head>
   <body>
     <h1>MOKEPON!🔥💧🌾</h1>
 
-    <section id="seleccionar-mascota">
+    <section  class ="mascotas" id="seleccionar-mascota">
       <h2>Elije a tu Mascota</h2>
-
-
-      <input type="radio" name="petPicked" id="bullbasaur" />
-      <label for="bullbasaur">Bullbasaur</label><br>
-
-
-      <input type="radio" name="petPicked" id="charmander" />
-      <label for="charmander">Charmander</label> <br>
-
-
-      <input type="radio" name="petPicked" id="squirtle" />
-      <label for="squirtle">Squirtle</label> <br>
+      <div class="caja-mascotas">
+        <div class="caja-mascota">
+          <input class="mascota" type="radio" name="petPicked" id="bullbasaur" />
+          <label for="bullbasaur">Bullbasaur</label>
+          <img src="./css/img/bulbasaur.png" name="petPicked" >
+        </div>
+        <div class="caja-mascota">
+          <input class="mascota" type="radio" name="petPicked" id="charmander" />
+          <label for="charmander">Charmander</label> 
+          <img src="./css/img/mokepon.png" name="petPicked" >
+        </div>
+        <div class="caja-mascota">
+          <input class="mascota" type="radio" name="petPicked" id="squirtle" />
+          <label for="squirtle">Squirtle</label>
+          <img src="./css/img/squirtle.png" name="petPicked" >
+        </div>
+      </div>
       <button id="button-petSelect"class="btn btn-secondary">Seleccionar</button>
 
     </section>
-    <section id="seleccionar-ataque">
+    <section id="seleccionar-ataque" style="display:none" >
       <h2>Elije tu ataque</h2>
 
-      <p>Tu mascota <span id="gamerPet"></span> tiene <span>3</span> vidas</p>
-      <p>La mascota enemiga <span id="pcPet"></span> tiene <span>3</span> vidas</p>
+      <p>Tu mascota <span id="gamerPet"></span> tiene <span id="gamerLifes"></span> vidas</p>
+      <p>La mascota enemiga <span id="pcPet"></span> tiene <span id="pcLifes"></span> vidas</p>
    
       <p>
         <button id="button-fire"class="btn btn-warning">FUEGO🔥</button>
@@ -56,6 +66,8 @@
         </p>
       </section>
     </section>
+    <button class="btn btn-secondary m-1"id="restar" style="display:none">Reiniciar</button>
+
    
   </body>
 

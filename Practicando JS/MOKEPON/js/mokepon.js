@@ -1,11 +1,18 @@
 function reload() {
-  let yourPet;
-  let enemyPet;
+  let yourPet = "";
+  let enemyPet = "";
   let gamerAttack;
   let pcAttack;
   let battleResult;
-  let gamerLife;
-  let pcLife;
+  let gamerLife = 3;
+  let pcLife = 3;
+
+
+  let yourLifes = document.getElementById("gamerLifes")
+  yourLifes.innerHTML = gamerLife
+ 
+  let enemyLifes = document.getElementById("pcLifes")
+  enemyLifes.innerHTML = pcLife
 
   // Aleatorio
   function aleatorio(max, min) {
@@ -37,6 +44,9 @@ function reload() {
       yourPet = "Squirtle";
     } else {
       alert("Por favor, selecciona una mascota");
+
+      
+      
     }
 
     //Mascota de la PC
@@ -59,6 +69,13 @@ function reload() {
       petPcName.classList.add("text-bg-primary");
       enemyPet = "Squirtle";
     }
+    let atackSection = document.getElementById("seleccionar-ataque")
+    atackSection.style="display:block"
+    let petSection = document.getElementById("seleccionar-mascota")
+    petSection.style= "display: none";
+
+    
+
   }
   let buttonPetSelect = document.getElementById("button-petSelect");
   buttonPetSelect.addEventListener("click", selectPet);
@@ -76,12 +93,42 @@ function reload() {
         battleResult = "Empate😶"
     } else if(gamerAttack=="Fuego" && pcAttack == "Planta"){
         battleResult = "¡Ganaste! 🍻"
+        pcLife --
     } else if(gamerAttack=="Agua" && pcAttack == "Fuego"){
         battleResult = "¡Ganaste! 🍻"
+        pcLife --
     }else if(gamerAttack=="Planta" && pcAttack == "Agua"){
         battleResult = "¡Ganaste! 🍻"
+        pcLife --
     }else{
         battleResult = "¡Perdiste! 😣"
+        gamerLife --
+    }
+
+    let yourLifes = document.getElementById("gamerLifes")
+    yourLifes.innerHTML = gamerLife
+   
+    let enemyLifes = document.getElementById("pcLifes")
+    enemyLifes.innerHTML = pcLife
+    if (gamerLife == 0){
+      swal("Lo siento", "perdiste el juego");
+      let atackSection = document.getElementById("seleccionar-ataque")
+    atackSection.style="display:none"
+    }else if(pcLife == 0){
+      swal("Felicitaciones", "ganaste el juego");
+      let atackSection = document.getElementById("seleccionar-ataque")
+    atackSection.style="display:none"
+    }
+    
+  }
+
+  function restar() {
+    if(gamerLife == 0 || pcLife == 0){
+        let restarButton = document.getElementById("restar")
+       restarButton.style = "display:block"
+       restarButton.addEventListener('click', _ => {
+        location.reload();
+})
     }
   }
 
@@ -98,6 +145,7 @@ function reload() {
     battle()
     message();
     battleHistory()
+    restar()
     
   }
   // Ataques del jugador
