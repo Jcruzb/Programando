@@ -1,50 +1,111 @@
+
 body{
+    padding: 30px;
     display:flex;
-    background-color: #205375;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    height: 100%;
+    background: linear-gradient(#001253,  #3E6D9C );
     color: #F66B0E;
     font-family: 'Roboto', sans-serif;
-    
-    
 }
-.mascotas{
+h1{
+    margin: 50px;
+}
 
+.mascotas{
     display: flex;
     flex-direction: column;
-
 }
+
 input{
-    /* display: none; */
-  
+    display: none;
 }
 
 h2{
   text-align: center;
+  margin-bottom: 10px;
 }
+
 label{
-   
-   margin: 10px;
-
-}
-.caja-mascotas{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.caja-mascota{
-    display: flex;
+    display:flex;
     align-items: center;
+    justify-content: center;
+    margin: 20px;
+    width: 190px;
+    height: 120px;
     background-color: #112B3C;
     border: #F8F8F8;
     border-radius: 20px;
     cursor: grab;   
 }
-.caja-mascota:hover{
+
+label:hover{
     transform: scale(0.7);
     border-color: #F66B0E;
     border-width: 5px 5px 5px 5px;
 }
+
+.caja-mascota{
+    display: flex;
+  
+}
+
 .caja-mascota img{
+    
     width: 80px;
     margin: 5px;
+}
+
+.pet-selection{
+    border-radius: 5px;
+    background-color: transparent;
+    color:#F66B0E; ;
+    border-color: #F66B0E;;
+    margin-left: 35%;
+    width: 30%;
+}
+.pet-selection:hover{
+    border-color: white;
+    color:white;
+}
+.pet-selection::selection{
+    border-color: white;
+}
+@media (max-width:360px){
+    .caja-mascota{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .pet-selection{
+    margin-left: 25%;
+      width: 50%;
+    }
+}
+/* Seccion de ataques */
+
+.attack-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-direction: center;
+}
+.attack-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.pets-lifes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+strong{
+    color: white;
 }

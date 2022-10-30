@@ -16,7 +16,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="./js/mokepon.js"></script>
+    
     <link rel="stylesheet" href="./css/mokepon.css">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -28,41 +28,63 @@
 
     <section  class ="mascotas" id="seleccionar-mascota">
       <h2>Elije a tu Mascota</h2>
-      <div class="caja-mascotas">
+      
         <div class="caja-mascota">
           <input class="mascota" type="radio" name="petPicked" id="bullbasaur" />
-          <label for="bullbasaur">Bullbasaur</label>
-          <img src="./css/img/bulbasaur.png" name="petPicked" >
-        </div>
-        <div class="caja-mascota">
+          <label for="bullbasaur">
+            Bullbasaur 
+            <img src="./css/img/bulbasaur.png" name="petPicked" >
+          </label>
+
           <input class="mascota" type="radio" name="petPicked" id="charmander" />
-          <label for="charmander">Charmander</label> 
-          <img src="./css/img/mokepon.png" name="petPicked" >
-        </div>
-        <div class="caja-mascota">
+          <label for="charmander">
+            Charmander
+            <img src="./css/img/mokepon.png" name="petPicked" >
+          </label> 
+          
           <input class="mascota" type="radio" name="petPicked" id="squirtle" />
-          <label for="squirtle">Squirtle</label>
-          <img src="./css/img/squirtle.png" name="petPicked" >
-        </div>
+          <label for="squirtle">
+            Squirtle
+            <img src="./css/img/squirtle.png" name="petPicked" >
+          </label>
+          
+        
       </div>
-      <button id="button-petSelect"class="btn btn-secondary">Seleccionar</button>
+      <button id="button-petSelect"class="pet-selection" style="display: off;">Seleccionar</button>
 
     </section>
-    <section id="seleccionar-ataque" style="display:none" >
+    <section id="seleccionar-ataque" class="attack-section" style="display: none;" >
       <h2>Elije tu ataque</h2>
+      <div>
+        <p class="attack-buttons">
+          <button id="button-fire"class="btn btn-warning">FUEGO🔥</button>
+          <button id="button-water"class="btn btn-primary">AGUA💧</button>
+          <button id="button-plant"class="btn btn-success">PLANTA🌾</button>
+        </p>
+      </div>
 
-      <p>Tu mascota <span id="gamerPet"></span> tiene <span id="gamerLifes"></span> vidas</p>
-      <p>La mascota enemiga <span id="pcPet"></span> tiene <span id="pcLifes"></span> vidas</p>
-   
-      <p>
-        <button id="button-fire"class="btn btn-warning">FUEGO🔥</button>
-        <button id="button-water"class="btn btn-primary">AGUA💧</button>
-        <button id="button-plant"class="btn btn-success">PLANTA🌾</button>
-      </p>
-      <section id="mensajes">
-        <p>
+      <div id="mensajes" class="pets-lifes">
+        <div class="player">
+          <p>Tu mascota es: <span id="gamerPet"></span></p>
+          <p>Tus vidas: <strong><span id="gamerLifes"></span></strong></p>
           <p id="gamerAttack"class="alert alert-primary" role="alert"></p>
-          <p id="pcAttack"class="alert alert-primary" role="alert"></p>
+        </div>
+
+        <div class="player">
+          <p>PC mascota es:  <span id="pcPet"></span></p>
+          <p>PC vidas: <strong><span id="pcLifes"></span></strong></p>
+        <p id="pcAttack"class="alert alert-primary" role="alert"></p>
+        </div>
+
+      
+      </div>
+      <h2 id="result"></h2>
+      
+      <section >
+        <p>
+          
+          
+         
         </p>
       </section>
     </section>
@@ -71,5 +93,5 @@
    
   </body>
 
-
+  <script src="./js/mokepon.js"></script>
 </html>

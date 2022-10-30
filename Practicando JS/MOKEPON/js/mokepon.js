@@ -1,4 +1,4 @@
-function reload() {
+
   let yourPet = "";
   let enemyPet = "";
   let gamerAttack;
@@ -144,7 +144,7 @@ function reload() {
     }
     battle()
     message();
-    battleHistory()
+    /* battleHistory() */
     restar()
     
   }
@@ -177,13 +177,15 @@ function reload() {
   function message() {
     let gamerMessage = document.getElementById("gamerAttack");
     gamerMessage.innerHTML =
-      "Tu mascota " + yourPet + " atacó con " + gamerAttack;
+      "Atacaste con " + gamerAttack;
     let pcMessage = document.getElementById("pcAttack");
     pcMessage.innerHTML =
-      "La mascota enemiga " + enemyPet + " atacó con " + pcAttack + ", "+ battleResult;
+      "Te atacaron con " + pcAttack;
+    let result = document.getElementById("result")
+    result.innerHTML= battleResult
 
   }
-  function battleHistory(){
+ /*  function battleHistory(){
     let messageSection = document.getElementById("mensajes")
     
     let historyGamer = document.createElement("p")
@@ -193,15 +195,15 @@ function reload() {
     let historyPC = document.createElement("p")
     historyPC.innerHTML ="La mascota enemiga " + enemyPet + " atacó con " + pcAttack + ", "+ battleResult;
 
+    
+
     messageSection.appendChild(historyGamer)
     messageSection.appendChild(historyPC)
    
-  }
+  } */
  
 
 
 
 
 
-}
-window.addEventListener("load", reload);
